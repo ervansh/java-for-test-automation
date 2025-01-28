@@ -1,0 +1,12 @@
+{
+  "fields": {
+    "summary": "Main order flow broken",
+    "issuetype": {
+      "id": "10003",
+      "name" : "Bug"
+    },
+    "project": {
+      "id": "10000"
+    }
+  }
+}
