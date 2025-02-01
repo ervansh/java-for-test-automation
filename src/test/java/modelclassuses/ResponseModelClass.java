@@ -1,5 +1,7 @@
 package modelclassuses;
 
+import java.util.Objects;
+
 public class ResponseModelClass {
 
 	private int id;
@@ -9,6 +11,7 @@ public class ResponseModelClass {
 	private Address address;
 	private String phone;
 	private String website;
+	private Company company;
 
 	public String getWebsite() {
 		return website;
@@ -17,8 +20,6 @@ public class ResponseModelClass {
 	public void setWebsite(String website) {
 		this.website = website;
 	}
-
-	Company company;
 
 	public Address getAddress() {
 		return address;
@@ -74,6 +75,32 @@ public class ResponseModelClass {
 
 	public void setUsername(String username) {
 		this.username = username;
+	}
+
+	@Override
+	public String toString() {
+		return "ResponseModelClass [id=" + id + ", name=" + name + ", username=" + username + ", email=" + email
+				+ ", address=" + address + ", phone=" + phone + ", website=" + website + ", company=" + company + "]";
+	}
+
+	@Override
+	public int hashCode() {
+		return Objects.hash(address, company, email, id, name, phone, username, website);
+	}
+
+	@Override
+	public boolean equals(Object obj) {
+		if (this == obj)
+			return true;
+		if (obj == null)
+			return false;
+		if (getClass() != obj.getClass())
+			return false;
+		ResponseModelClass other = (ResponseModelClass) obj;
+		return Objects.equals(address, other.address) && Objects.equals(company, other.company)
+				&& Objects.equals(email, other.email) && id == other.id && Objects.equals(name, other.name)
+				&& Objects.equals(phone, other.phone) && Objects.equals(username, other.username)
+				&& Objects.equals(website, other.website);
 	}
 
 }
